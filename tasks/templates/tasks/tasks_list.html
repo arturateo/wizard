@@ -1,0 +1,13 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+        <div class="post">
+            {% comment %} <a href="{% url 'tasks_detail' pk=post.pk %}"></a> {% endcomment %}
+            <table>
+                <tr><th>Организация</th><th>ФИО</th><th>Телефонный номер</th><th>Email</th><th>Источник</th><th>Тема письма</th><th>Стадия работы</th><th>Запрашиваемое оборудование</th><th>Доп информация</th><th>Название КП</th><th>Дата создания</th></tr> 
+                {% for post in posts %}
+                <tr><th>{{ post.tasks_organization }}</th><th>{{ post.tasks_full_name }}</th><th>{{ post.tasks_tel_number }}</th><th>{{ post.tasks_email }}</th><th>{{ post.tasks_source }}</th><th>{{ post.tasks_theme_letters }}</th><th>{{ post.tasks_stages }}</th><th>{{ post.tasks_requested_equipment }}</th><th>{{ post.tasks_more_info }}</th><th>{{ post.tasks_name_offer }}</th><th>{{ post.created_date }}</th></tr>
+                {% endfor %}
+            </table>
+        </div>
+{% endblock %}
